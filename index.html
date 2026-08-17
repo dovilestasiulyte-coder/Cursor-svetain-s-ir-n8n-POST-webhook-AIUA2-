@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-step Forma</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress"></div>
+    </div>
+
+    <form id="multiStepForm">
+      <div class="form-header">
+        <span class="step-indicator" id="step-indicator">1 ŽINGSNIS IŠ 3</span>
+      </div>
+
+      <!-- 1 ŽINGSNIS -->
+      <div class="step active">
+        <h2 class="step-title">Pasirinkite paslaugą</h2>
+        <div class="options-grid">
+          <div class="option-item">
+            <input type="radio" name="service" id="service-design" value="Dizainas">
+            <label for="service-design" class="option-card">
+              <span class="option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.6-.7 1.6-1.6 0-.4-.2-.8-.4-1.1-.3-.3-.4-.6-.4-1.1 0-.9.7-1.6 1.6-1.6h2c3 0 5.5-2.5 5.5-5.5C21.9 6 17.5 2 12 2z"/>
+                  <circle cx="8" cy="8" r="1" fill="currentColor" stroke="none"/>
+                  <circle cx="12" cy="6" r="1" fill="currentColor" stroke="none"/>
+                  <circle cx="16" cy="10" r="1" fill="currentColor" stroke="none"/>
+                  <circle cx="7" cy="13" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+              </span>
+              <span class="option-text">Dizainas</span>
+            </label>
+          </div>
+          <div class="option-item">
+            <input type="radio" name="service" id="service-coding" value="Kodavimas">
+            <label for="service-coding" class="option-card">
+              <span class="option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="16 18 22 12 16 6"/>
+                  <polyline points="8 6 2 12 8 18"/>
+                </svg>
+              </span>
+              <span class="option-text">Kodavimas</span>
+            </label>
+          </div>
+          <div class="option-item">
+            <input type="radio" name="service" id="service-marketing" value="Rinkodara">
+            <label for="service-marketing" class="option-card">
+              <span class="option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                  <polyline points="17 6 23 6 23 12"/>
+                </svg>
+              </span>
+              <span class="option-text">Rinkodara</span>
+            </label>
+          </div>
+        </div>
+        <p class="error-msg" id="error-step-0">Prašome pasirinkti bent vieną variantą.</p>
+      </div>
+
+      <!-- 2 ŽINGSNIS -->
+      <div class="step">
+        <h2 class="step-title">Planuojamas biudžetas</h2>
+        <div class="options-grid">
+          <div class="option-item">
+            <input type="radio" name="budget" id="budget-small" value="Iki 1000€">
+            <label for="budget-small" class="option-card">
+              <span class="option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M14.5 9.5c-.8-1-2.2-1.2-3.2-.4-1 .8-1 2.2 0 3 .6.5 1.4.7 2.2.7"/>
+                  <path d="M9.5 14.5c.8 1 2.2 1.2 3.2.4 1-.8 1-2.2 0-3"/>
+                </svg>
+              </span>
+              <span class="option-text">Iki 1000€</span>
+            </label>
+          </div>
+          <div class="option-item">
+            <input type="radio" name="budget" id="budget-medium" value="Standartinė apimtis (1000 € - 5000 €)">
+            <label for="budget-medium" class="option-card">
+              <span class="option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="6" width="20" height="12" rx="2"/>
+                  <circle cx="12" cy="12" r="2.5"/>
+                  <path d="M6 10h.01M18 14h.01"/>
+                </svg>
+              </span>
+              <span class="option-text">1000€ - 5000€</span>
+            </label>
+          </div>
+          <div class="option-item">
+            <input type="radio" name="budget" id="budget-large" value="Virš 5000€">
+            <label for="budget-large" class="option-card">
+              <span class="option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </span>
+              <span class="option-text">Virš 5000€</span>
+            </label>
+          </div>
+        </div>
+        <p class="error-msg" id="error-step-1">Prašome pasirinkti biudžetą.</p>
+      </div>
+
+      <!-- 3 ŽINGSNIS -->
+      <div class="step">
+        <h2 class="step-title">Projekto terminas</h2>
+        <div class="options-grid">
+          <div class="option-item">
+            <input type="radio" name="timeline" id="time-urgent" value="Skubu (Iki 2 savaičių)">
+            <label for="time-urgent" class="option-card">
+              <span class="option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+              </span>
+              <span class="option-text">Skubiai (1-2 sav.)</span>
+            </label>
+          </div>
+          <div class="option-item">
+            <input type="radio" name="timeline" id="time-normal" value="Įprastai">
+            <label for="time-normal" class="option-card">
+              <span class="option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+              </span>
+              <span class="option-text">Įprastai (1 mėn.)</span>
+            </label>
+          </div>
+        </div>
+        <p class="error-msg" id="error-step-2">Prašome pasirinkti terminą.</p>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" id="prevBtn" class="btn btn-outline">Atgal</button>
+        <button type="button" id="nextBtn" class="btn btn-primary">Toliau</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
